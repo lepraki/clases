@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"    ></script>
+    <script src="https://unpkg.com/ aframe-particle-system-component@1.0.x /dist/aframe-particle-system-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="fondo" src="assets/texturas/fondo.jpg">
+            <img id="sky" src="assets/texturas/atardecer.jpg">
+            <img id="madera" src="assets/texturas/madera.png">
+            </a-assets>
+            <a-sky scr="#sky"></a-sky>
+        <a-camera position="5 0.5 5"></a-camera>
+        <a-entify light ="type: point; intensity: 0.75; distance: 50; decay: 2; color: #ffb804"
+        positon="-4 4 0"></a-entify>
+        <a-entify light ="type: point; intensity: 0.75; distance: 50; decay: 2; color: #1a55ff"
+        positon="4 4 0"></a-entify>
+
+        <a-box material="normalMap:#madera; normalTextureOffset:10" repeat="2" src="#madera" 
+        rotation="0 0 0" position="0 1 0" animation="property: rotation; to: 0 2600 0; loop: true; dur: 40000;
+         dir:alternate">
+         <a-box position="4 0 0" color="red" rotation="0 0 0 " animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;
+         dir:alternate"></a-box>   </a-box>
+        <a-plane material="normalMap:#fondo; normalTextureOffset:10" src="#fondo" width="10" height="10" 
+        rotation="-90 0 0"></a-plane>
+        
+    </a-scene>    
+</body>
+</html>
